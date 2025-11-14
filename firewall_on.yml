@@ -2,9 +2,9 @@
 - name: Turn Firewall ON
   hosts: all
   become: true
-  task:
+  tasks:
     - name: Start and enable firewalld service
-      ansible.builtin.service
+      ansible.builtin.service:
         name: firewalld
         state: started
-        enable: true
+        enabled: true
