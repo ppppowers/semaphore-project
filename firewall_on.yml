@@ -1,0 +1,10 @@
+---
+- name: Turn Firewall ON
+  hosts: all
+  become: true
+  task:
+    - name: Start and enable firewalld service
+      ansible.builtin.service
+        name: firewalld
+        state: started
+        enable: true
