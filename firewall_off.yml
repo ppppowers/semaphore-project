@@ -2,9 +2,9 @@
 - name: Turn Firewall OFF
   hosts: all
   become: true
-  task:
+  tasks:
     - name: Stop and disable firewalld service
-      ansible.builtin.service
+      ansible.builtin.service:
         name: firewalld
         state: stopped
-        enable: false
+        enabled: false
